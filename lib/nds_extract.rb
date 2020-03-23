@@ -37,8 +37,13 @@ def movies_with_director_key(name, movies_collection)
   n = 0 
   new = []
   while n < movies_collection.count
-  new << {:director_name => name, :title => movies_collection[n][:title],
-  n+=1 
+    new << {
+      :director_name => name, 
+      :title => movies_collection[n][:title], 
+      :studio => movies_collection[n][:studio], 
+      :worldwide_gross => movies_collection[n][:worldwide_gross]
+    }
+    n+=1 
 end
 new
   # GOAL: For each Hash in an Array (movies_collection), provide a collection
